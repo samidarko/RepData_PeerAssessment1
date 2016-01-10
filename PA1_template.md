@@ -262,10 +262,7 @@ head(stepsPerInterval)
 ### Make a panel plot containing a time series plot of the 5-minute intervage and the average number of steps
 
 ```r
-ggplot(newDataset, aes(x=interval, y=steps)) + 
-        geom_line(color="blue") + 
-        facet_wrap(~ weekday, nrow=2, ncol=1) +
-        labs(x="Interval", y="Number of steps")
+qplot(interval, steps, data = stepsPerInterval, facets = weekday ~ . , geom = 'line', xlab = 'Interval', ylab = 'Number of steps')
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-13-1.png) 
